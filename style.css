@@ -6,7 +6,7 @@
   --orange: #F7931A;
   --dim: #9A9490;
   --ink: #241004;
-  --font-display: 'Arial Black', Arial, sans-serif;
+  --font-display: 'Archivo Black', 'Arial Black', Arial, sans-serif;
   --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
@@ -77,6 +77,14 @@ a { color: inherit; }
 .platform-icons a:hover { transform: scale(1.08); }
 .platform-icons svg { width: 34px; height: 34px; display: block; }
 
+.social-label {
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(237, 234, 228, .4);
+  margin-bottom: .5rem;
+}
 .social-row { display: flex; align-items: center; gap: .7rem; }
 .social-row a { display: block; line-height: 0; transition: transform .15s; }
 .social-row a:hover { transform: scale(1.08); }
