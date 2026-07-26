@@ -103,6 +103,14 @@ footer {
   text-align: center;
 }
 footer p { font-size: .78rem; color: rgba(237, 234, 228, .35); }
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1.4rem;
+}
+.footer-social .social-row { justify-content: center; }
 
 @media (max-width: 600px) {
   .site-nav { padding: 1rem 1.2rem; }
