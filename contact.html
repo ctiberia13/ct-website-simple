@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &mdash; Christian Tiberia</title>
+  <link rel="icon" type="image/png" href="images/CT Monogram.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 2.4rem 1.6rem 3rem;
+    }
+    .contact-wrap h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      color: var(--white);
+      font-size: clamp(1.7rem, 5vw, 2.2rem);
+      letter-spacing: -0.01em;
+      margin-bottom: .7rem;
+    }
+    .contact-wrap > p.dek {
+      font-size: 1rem;
+      color: rgba(237,234,228,0.6);
+      margin-bottom: 2.2rem;
+      line-height: 1.6;
+    }
+
+    .form { display: flex; flex-direction: column; gap: 16px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(237,234,228,0.45);
+    }
+    .field input, .field textarea {
+      background: #151312;
+      border: 1px solid rgba(237,234,228,0.14);
+      color: var(--white);
+      font-family: var(--font);
+      font-size: .98rem;
+      padding: 12px 14px;
+      border-radius: 8px;
+      outline: none;
+      resize: none;
+      width: 100%;
+      transition: border-color .15s;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(237,234,228,0.32); }
+    .field input:focus, .field textarea:focus { border-color: var(--orange); }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: var(--orange);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: .85rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      padding: 13px 28px;
+      border-radius: 999px;
+      transition: opacity .15s;
+    }
+    .submit-btn:hover { opacity: .85; }
+    .submit-btn:disabled { opacity: .5; cursor: default; }
+
+    .success { display: none; padding: 1.6rem 0; }
+    .success strong {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    .success p { color: rgba(237,234,228,0.7); font-size: .95rem; }
+
+    .direct {
+      margin-top: 2.6rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(237,234,228,0.1);
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+    }
+    .direct a {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(237,234,228,0.55);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .direct a:hover { color: var(--white); }
+
+    @media (max-width: 480px) {
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-mark"><img src="images/CT Monogram.png" alt="Christian Tiberia — home" /></a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </div>
+</nav>
+
+<div class="contact-wrap">
+  <h1>Get in touch</h1>
+  <p class="dek">Whether you want to talk, collaborate, or just say something &mdash; reach out.</p>
+
+  <div class="success" id="success">
+    <strong>Message received</strong>
+    <p>I'll get back to you soon.</p>
+  </div>
+
+  <form class="form" id="contactForm"
+        action="https://formspree.io/f/mykaeeyw"
+        method="POST">
+    <div class="row">
+      <div class="field">
+        <label for="firstName">First name</label>
+        <input id="firstName" type="text" name="firstName" placeholder="John" required />
+      </div>
+      <div class="field">
+        <label for="lastName">Last name</label>
+        <input id="lastName" type="text" name="lastName" placeholder="Smith" required />
+      </div>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="john@example.com" required />
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="What's on your mind..." required></textarea>
+    </div>
+    <div>
+      <button type="submit" class="submit-btn" id="submitBtn">Send</button>
+    </div>
+  </form>
+
+  <div class="direct">
+    <a href="mailto:ctiberia13@gmail.com">Email &#8599;</a>
+    <a href="https://x.com/ChristianOnBTC" target="_blank" rel="noopener">X &#8599;</a>
+    <a href="https://primal.net/christian21" target="_blank" rel="noopener">Primal &#8599;</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Christian Tiberia</p>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const btn  = document.getElementById('submitBtn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST', body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+      } else {
+        btn.textContent = 'Send';
+        btn.disabled = false;
+        alert('Something went wrong — email me directly at ctiberia13@gmail.com');
+      }
+    } catch (err) {
+      btn.textContent = 'Send';
+      btn.disabled = false;
+      alert('Something went wrong — email me directly at ctiberia13@gmail.com');
+    }
+  });
+</script>
+</body>
+</html>
