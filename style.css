@@ -32,18 +32,18 @@ a { color: inherit; }
   position: relative;
   z-index: 3;
 }
-.nav-mark img { width: clamp(36px, 2.6vw, 54px); height: clamp(36px, 2.6vw, 54px); border-radius: 20%; display: block; }
-.nav-links { display: flex; gap: clamp(1.6rem, 2.4vw, 2.6rem); }
+.nav-mark img { width: clamp(40px, 3.2vw, 64px); height: clamp(40px, 3.2vw, 64px); border-radius: 20%; display: block; }
+.nav-links { display: flex; gap: clamp(1.7rem, 2.6vw, 3rem); }
 .nav-links a {
-  font-size: clamp(.85rem, 1.05vw, 1.15rem);
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
   letter-spacing: .06em;
   text-transform: uppercase;
   font-weight: 700;
-  color: rgba(237, 234, 228, .6);
+  color: var(--white);
   text-decoration: none;
   transition: color .15s;
 }
-.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--white); }
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--orange); }
 
 /* ---- shared buttons / icon rows ---- */
 .btn-listen {

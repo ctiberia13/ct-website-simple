@@ -49,7 +49,11 @@
       line-height: 0.95;
       letter-spacing: -0.01em;
     }
-    .hero-name .rule { margin-top: 1rem; }
+    .hero-main .rule {
+      width: clamp(90px, 7vw, 160px);
+      height: clamp(6px, .5vw, 9px);
+      margin-top: clamp(1.1rem, 1.8vw, 2rem);
+    }
     .hero-bottombar {
       position: relative;
       z-index: 2;
@@ -66,7 +70,7 @@
       .hero-photo {
         position: relative;
         width: 100%;
-        height: 260px;
+        height: 225px;
         -webkit-mask-image: linear-gradient(180deg, black 68%, transparent 100%);
         mask-image: linear-gradient(180deg, black 68%, transparent 100%);
       }
@@ -75,12 +79,12 @@
         max-width: none;
         align-items: center;
         text-align: center;
-        padding: 2.2rem 1.6rem 0;
+        padding: 1.3rem 1.6rem 0;
       }
       .hero-main .rule { margin-left: auto; margin-right: auto; }
       .hero-bottombar {
         align-items: center;
-        padding: 1.2rem 1.6rem 2.4rem;
+        padding: .85rem 1.6rem 2rem;
         background: none;
       }
       .cta-row, .social-row { justify-content: center; }
