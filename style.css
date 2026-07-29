@@ -121,7 +121,7 @@ footer p { font-size: .78rem; color: rgba(237, 234, 228, .35); }
 
 @media (max-width: 420px) {
   .site-nav { padding: .85rem .9rem; }
-  .nav-links { gap: .8rem; }
-  .nav-links a { font-size: .8rem; letter-spacing: .03em; }
-  .nav-mark img { width: 32px; height: 32px; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 1.05rem; letter-spacing: .03em; }
+  .nav-mark img { width: 36px; height: 36px; }
 }
