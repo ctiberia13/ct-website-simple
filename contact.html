@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact &mdash; Christian Tiberia</title>
   <link rel="icon" type="image/png" href="images/CT Monogram.png" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
@@ -24,8 +24,8 @@
       margin-bottom: .7rem;
     }
     .contact-wrap > p.dek {
-      font-size: 1rem;
-      color: rgba(237,234,228,0.6);
+      font-size: 1.1rem;
+      color: rgba(237,234,228,0.85);
       margin-bottom: 2.2rem;
       line-height: 1.6;
     }
@@ -34,11 +34,11 @@
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .field { display: flex; flex-direction: column; gap: 6px; }
     .field label {
-      font-size: .72rem;
+      font-size: .78rem;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: rgba(237,234,228,0.45);
+      color: rgba(237,234,228,0.8);
     }
     .field input, .field textarea {
       background: #151312;
@@ -53,7 +53,7 @@
       width: 100%;
       transition: border-color .15s;
     }
-    .field input::placeholder, .field textarea::placeholder { color: rgba(237,234,228,0.32); }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(237,234,228,0.42); }
     .field input:focus, .field textarea:focus { border-color: var(--orange); }
 
     .submit-btn {
@@ -87,7 +87,7 @@
       color: var(--orange);
       margin-bottom: 6px;
     }
-    .success p { color: rgba(237,234,228,0.7); font-size: .95rem; }
+    .success p { color: rgba(237,234,228,0.88); font-size: 1rem; }
 
     .direct {
       margin-top: 2.6rem;
@@ -98,11 +98,11 @@
       flex-wrap: wrap;
     }
     .direct a {
-      font-size: .75rem;
+      font-size: .8rem;
       font-weight: 700;
       letter-spacing: .06em;
       text-transform: uppercase;
-      color: rgba(237,234,228,0.55);
+      color: rgba(237,234,228,0.85);
       text-decoration: none;
       transition: color .15s;
     }
@@ -154,7 +154,7 @@
       <textarea id="message" name="message" rows="5" placeholder="What's on your mind..." required></textarea>
     </div>
     <div>
-      <button type="submit" class="submit-btn" id="submitBtn">Send</button>
+      <button type="submit" class="submit-btn" id="submitBtn" style="background-color:#F7931A;">Send</button>
     </div>
   </form>
 
