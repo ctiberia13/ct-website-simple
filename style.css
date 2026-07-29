@@ -12,6 +12,7 @@
 
 html { scroll-behavior: smooth; }
 
+html, body { overflow-x: hidden; }
 body {
   background: var(--black);
   color: var(--white);
@@ -116,4 +117,11 @@ footer p { font-size: .78rem; color: rgba(237, 234, 228, .35); }
 @media (max-width: 600px) {
   .site-nav { padding: 1rem 1.2rem; }
   .nav-links { gap: 1.1rem; }
+}
+
+@media (max-width: 420px) {
+  .site-nav { padding: .85rem .9rem; }
+  .nav-links { gap: .8rem; }
+  .nav-links a { font-size: .8rem; letter-spacing: .03em; }
+  .nav-mark img { width: 32px; height: 32px; }
 }
